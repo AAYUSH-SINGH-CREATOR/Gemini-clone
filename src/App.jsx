@@ -1,8 +1,13 @@
-export default function App(){
+import Header from "./components/Header"
+import Message from "./components/Message"
+export default function App() {
 
-  return(
-    <div>
-       <p className="font-bold text-5xl text-cyan-400 text-center">hello</p>
+  return (
+    <div className="w-screen h-screen bg-zinc-950 flex flex-col">
+      <Header />
+      <div className="flex-1 flex justify-center items-center ">
+        <Message />
+      </div>
     </div>
   )
 }
