@@ -1,12 +1,15 @@
-import { useState } from "react"
-
+import { useContext, useState } from "react"
+import {AppContext} from "../Context/AppContext"
 
 export default function Message () {
- 
+      
     const[question, setQuestion] = useState('');
+    const {setMessage, callGemini} = useContext(AppContext);
 
     function inputHandler () {
        console.log(question);
+       setMessage(question);
+       callGemini(question)
        setQuestion('');
     }
 
