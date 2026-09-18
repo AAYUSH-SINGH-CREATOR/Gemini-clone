@@ -8,6 +8,7 @@ export default function AppContextProvider( { children } ) {
 
     const [message, setMessage] = useState('');
     const [res, setRes] = useState('');
+    const [dark, setDark] = useState(true);
 
 
    async function callGemini(message) {
@@ -29,6 +30,8 @@ const value = {
     res,
     setRes,
     callGemini,
+    dark,
+    setDark,
 
 }
 

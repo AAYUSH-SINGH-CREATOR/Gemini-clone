@@ -1,40 +1,13 @@
 @import 'tailwindcss';
 
 .gemini-background {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: #0f0f11; 
-  overflow: hidden;
-}
-
-.gemini-background::before,
-.gemini-background::after {
-  content: '';
-  position: absolute;
-  width: 60vw;
-  height: 60vw;
-  border-radius: 50%;
-  filter: blur(80px); 
-  opacity: 0.5;
-  animation: pulse 12s infinite alternate ease-in-out;
-}
-
-.gemini-background::before {
-  background: radial-gradient(circle, rgba(66, 133, 244, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
-  top: -10%;
-  left: -10%;
-}
-
-.gemini-background::after {
-  background: radial-gradient(circle, rgba(161, 66, 244, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
-  bottom: -10%;
-  right: -10%;
-  animation-delay: -6s;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1) translate(0, 0); }
-  50% { transform: scale(1.2) translate(5%, 5%); }
-  100% { transform: scale(0.9) translate(-5%, -5%); }
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 50% 50%,
+      rgba(120, 90, 255, 0.50) 0%,
+      rgba(80, 60, 200, 0.32) 30%,
+      rgba(40, 30, 110, 0.16) 55%,
+      transparent 80%
+    ),
+    #09090b;
 }
