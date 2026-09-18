@@ -7,16 +7,23 @@ export default function Message () {
     const {setMessage, callGemini} = useContext(AppContext);
 
     function inputHandler () {
+        if (!question.trim()) return;
        console.log(question);
        setMessage(question);
-       callGemini(question)
+       callGemini(question);
        setQuestion('');
     }
-
+function handleKeyDown (e) {
+        if (e.key === 'Enter') {
+            inputHandler();
+        }
+    }
     return(
-        <div className="bg-zinc-800 p-3 rounded-full w-[30%] flex justify-between">
-            <input type="text" placeholder="Ask Gemini" className="text-white outline-none m-2 w-full h-full" value={question} onChange={(event)=> {setQuestion(event.target.value)}}/>
+        <div className="bg-zinc-800 p-3 rounded-full  w-full max-w-2xl h-15 flex justify-between items-center">
+            <input type="text" placeholder="Ask Gemini" className= "outline-none m-2 text-white  w-full h-full" value={question} onChange={(event)=> {setQuestion(event.target.value)}} onKeyDown={handleKeyDown}/>
             <button className="text-white m-2" onClick={inputHandler}>ASK</button>
         </div>
     )
 }
+
+
