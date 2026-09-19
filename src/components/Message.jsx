@@ -4,12 +4,11 @@ import {AppContext} from "../Context/AppContext"
 export default function Message () {
       
     const[question, setQuestion] = useState('');
-    const {setMessage, callGemini, dark} = useContext(AppContext);
+    const {setPrompt, callGemini, dark} = useContext(AppContext);
 
     function inputHandler () {
         if (!question.trim()) return;
-       console.log(question);
-       setMessage(question);
+       setPrompt(question);
        callGemini(question);
        setQuestion('');
     }
