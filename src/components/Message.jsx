@@ -8,6 +8,7 @@ export default function Message () {
 
     function inputHandler () {
         if (!question.trim()) return;
+        question.trim();
        setPrompt(question);
        callGemini(question);
        setQuestion('');

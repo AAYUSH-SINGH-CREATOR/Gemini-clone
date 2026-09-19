@@ -1,7 +1,6 @@
 
 import { useContext, useEffect, useRef } from "react";
 import { AppContext } from "../Context/AppContext";
-import Loader from "./Loader";
 
 
 export default function Chatbox() {

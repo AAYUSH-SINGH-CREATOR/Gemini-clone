@@ -23,9 +23,9 @@ export default function AppContextProvider({ children }) {
 
         try {
             console.log('in callGemini');
-            const key = "AQ.Ab8RN6IvQnLt1MUq1Y0qMoxOhtOk-WkMREnmuHd3rv6KuJ7MjA";
+
             const ai = new GoogleGenAI({
-                apiKey: key
+                apiKey: import.meta.env.VITE_API_KEY
             });
 
             const response = await ai.models.generateContent({
